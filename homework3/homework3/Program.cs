@@ -25,8 +25,48 @@
             {
                 sum = x;
             }
-            Console.WriteLine($"Sum={sum}"); 
+            Console.WriteLine($"Sum={sum}");
 
+            //// HOMEWORK3_2 //// 
+         
+              Console.WriteLine("Enter num1 value");
+              int num1 = int.Parse(Console.ReadLine()); 
+
+              Console.WriteLine("Enter num2  value");
+              int num2 = int.Parse(Console.ReadLine());
+
+              bool PlanA = num1 >= num2;
+              bool PlanB = num1 <= num2;
+              for (int i =num1; i <= num1; i ++ )
+
+              {
+                  if (PlanA)
+                  {
+                      Console.WriteLine($"x > y\n{num1}>{num2}");
+                      continue; 
+                  }
+                  else if (!PlanA)
+                  {
+                      Console.WriteLine($"x < y\n{num1}<{num2}");
+                      Console.WriteLine("Invalid input");
+                      break;
+                  }
+
+              }
+          
+            ///Or in another way also homework 3_2///
+            Console.WriteLine("Please write your impressions of the film ");
+            string impression1 = Console.ReadLine();
+            string impression2 = Console.ReadLine();
+            while (true)
+            {
+                if (impression2 == "bad")
+                {
+                    Console.WriteLine("Invalid imput");
+                    break;
+                }
+
+            }
         }
     }
 }
