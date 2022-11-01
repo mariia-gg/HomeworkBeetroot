@@ -68,31 +68,31 @@
     /////////HOMEWORK4_3////////
     internal class Homework4_3
     {
-        static bool TrySumIfOdd(int x, int y)
+     public static bool TrySumIfOdd(int x, int y, out int sum)
         {
-            int sum = x + y;
+            sum = x + y;
             if ((sum % 2) == 0)
             {
                 return true;
             }
-            else
+            else 
             {
                 return false;
             }
         }
-      
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter x");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter y");
-            int y = int.Parse(Console.ReadLine());
+            int sum;
+            bool result = TrySumIfOdd(2, 2, out sum);
+            Console.WriteLine(result); 
+            Console.WriteLine(sum); 
 
-            Console.WriteLine("Result: " + TrySumIfOdd(x, y));
         }
     }
+}
     //////  HOMEWORK4_4 //// 
-    public class OverloadMethod
+    /*public class OverloadMethod
     {
         public int Method1(int param1, int param2, int param3)
         {
@@ -113,7 +113,43 @@
             Console.WriteLine(res2.ToString());
 
         }
-    }
+    } */
+    ////////// EXTRA HOMEWORK 4_5 ////// 
+   // public static class ExtraTask
+    //{
+        /*  public static string Repeat(this string input, int count)
+          {
+              if (string.IsNullOrEmpty(input) || count <= 1)
+                  return input;
+
+             for (var i = 1;  i< count; i++ )
+             {
+                  return input;
+             } 
+          }
+          static void Main(string[] args)
+          {
+             string input =  Console.ReadLine();
+              int count = int.Parse(Console.ReadLine()); 
 
 
-}
+          }*/
+      /*  public static string Repeat(this string str, int count)
+        {
+            string ret = "str";
+
+            for (var x = 0; x < count; x++)
+            {
+                ret += str;
+            }
+
+            return ret;
+        }
+        static void Main(string[] args)
+        {
+            string ret = Console.ReadLine();
+            int count = int.Parse(Console.ReadLine());
+
+        }
+    } 
+} */
