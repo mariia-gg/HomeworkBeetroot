@@ -1,7 +1,7 @@
 ﻿namespace homework4_1_methods_
 {
     /////  HOMEWORK4_1
-    internal class HOMEWORK4_1
+    /*internal class HOMEWORK4_1
     {
         public static int GetMaxValue(int FirstParameter, int SecondParameter)
         {
@@ -64,8 +64,34 @@
                 Console.ReadKey(); 
             }
         }
+    */
+    /////////HOMEWORK4_3////////
+    internal class Homework4_3
+    {
+        static bool TrySumIfOdd(int x, int y)
+        {
+            int sum = x + y;
+            if ((sum % 2) == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+      
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter x");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter y");
+            int y = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Result: " + TrySumIfOdd(x, y));
+        }
+    }
 
 
-    
 
 }
