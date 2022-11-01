@@ -91,7 +91,29 @@
             Console.WriteLine("Result: " + TrySumIfOdd(x, y));
         }
     }
+    //////  HOMEWORK4_4 //// 
+    public class OverloadMethod
+    {
+        public int Method1(int param1, int param2, int param3)
+        {
+            return param1 + param2 + param3;
+        }
 
+        public string Method1(string param1, string param2, string param3, string param4)
+        {
+            return param1 + param2 + param3 + param4;
+        }
+
+        static void Main(string[] args)
+        {
+            var overload = new OverloadMethod();
+            var res1 = overload.Method1(56, 34, 76);
+            var res2 = overload.Method1("Have ", "a ", "nice", " day! ");
+            Console.WriteLine(res1.ToString());
+            Console.WriteLine(res2.ToString());
+
+        }
+    }
 
 
 }
