@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace LibraryDataAccess;
 
-namespace LibraryDataAccess
+public interface IRepository<TEntity>
 {
-    internal interface IRepository<TEntity>
-    {
-        IList<TEntity> GetAll();
+    public List<TEntity> GetAll();
 
-        TEntity Get(int id);
-
-        void Insert(TEntity entity);
-
-    }
-
+    public TEntity? Get(int id);
+    
+    public void Insert(TEntity entity);
 }
