@@ -62,6 +62,20 @@ internal class Application
         var createBookModel = ConsoleHelper.ReadBook();
 
         _libraryService.CreateBook(createBookModel);
+
+        CreateBookModelValidator validator = new CreateBookModelValidator();
+
+        ValidationResult results= validator.Validate(createBookModel);
+
+        if (!results.IsValid)
+        {
+            foreach (var failure in results.Errors)
+            {
+                Console.WriteLine("Property " +
+                    failure.PropertyName + " failed validation. Error was: " +
+                    failure.ErrorMessage);
+            }
+        }
     }
 
     private void HandleLibraryListCommand()
@@ -83,7 +97,9 @@ internal class Application
         {
             foreach (var failure in results.Errors)
             {
-                Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                Console.WriteLine("Property " + 
+                    failure.PropertyName + " failed validation. Error was: " + 
+                    failure.ErrorMessage);
             }
         }
     }
