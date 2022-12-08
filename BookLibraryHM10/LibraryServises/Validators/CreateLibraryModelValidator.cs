@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using LibraryEntities;
 using LibraryServices.Models;
 
@@ -12,6 +13,4 @@ internal class CreateLibraryModelValidator : AbstractValidator<CreateLibraryMode
             .MinimumLength(1)
             .WithMessage("Library Name required");
     }
-
-    
 }

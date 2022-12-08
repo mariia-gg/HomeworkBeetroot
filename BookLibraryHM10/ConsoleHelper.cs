@@ -47,21 +47,7 @@ public static class ConsoleHelper
         {
             Name = name
         };
-
-        Library createLibraryModel = new Library();
-
-        CreateLibraryModelValidator validator = new CreateLibraryModelValidator();
-
-        ValidationResult results = validator.Validate(createLibraryModel);
-
-        if (!results.IsValid)
-        {
-            foreach (var failure in results.Errors)
-            {
-                Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
-            }
-        }
-
+       
     }
 
     public static int GetLibraryId()
