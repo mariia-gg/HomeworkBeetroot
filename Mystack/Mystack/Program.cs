@@ -10,20 +10,26 @@ namespace Mystack
         CreatingStack(); 
     }
 
-    public static void CreatingStack()
-    {       
-        Stack<int> myStack = new Stack<int>();
-        
-        myStack.Push(1);
-        myStack.Push(2);
-        myStack.Push(3);
-        myStack.Push(4);
-        myStack.Push(5);
-     
-        foreach(var number in myStack)
+        public static void CreatingStack()
         {
-             Console.Write(number + ",");
-        }
+            Stack<int> myStack = new Stack<int>();
+
+            myStack.Push(1);
+            myStack.Push(2);
+            myStack.Push(3);
+            myStack.Push(4);
+            myStack.Push(5);
+
+            foreach (var number in myStack)
+            {
+                Console.Write(number + ",");
+            }
+
+            Console.WriteLine();
+            
+            Console.WriteLine("Peek in the stack:{0} ", myStack.Peek());
+
+
         }
 
     }
