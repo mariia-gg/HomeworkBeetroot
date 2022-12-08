@@ -1,4 +1,5 @@
-﻿using LibraryServises;
+﻿using LibraryServices;
+using LibraryServices;
 
 namespace BookLibraryHM10;
 
@@ -9,12 +10,17 @@ internal class Application
     public Application(ILibraryService libraryService) =>
         _libraryService = libraryService;
 
+    public Application()
+    {
+      
+    }
+
     public void Run()
     {
         do
         {
             Console.WriteLine(
-                "Choose operation (-lib_c)- create library, (-lib_list) - list of created libraries, (-book_c)- create book, (-book_list) - information about books in one of libraries");
+                "Choose operation (-lib_c)- create library, (-lib_list) - list of created libraries, (-book_c)- create book, (-book_list) - information about books in one of libraries, (-exit) - exit ");
 
             var input = Console.ReadLine();
 

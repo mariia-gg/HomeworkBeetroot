@@ -1,14 +1,15 @@
 ﻿using BookLibraryHM10.Models;
 using LibraryDataAccess;
 using LibraryEntities;
-using LibraryServises;
-using LibraryServises.Models;
+using LibraryServices;
+using LibraryServices.Models;
 
 namespace LibraryServices;
 
 public class LibraryService : ILibraryService
 {
     private readonly IRepository<Library> _library;
+
     private readonly IRepository<Book> _book;
 
     public LibraryService(IRepository<Library> library, IRepository<Book> book)

@@ -1,5 +1,5 @@
 ﻿using BookLibraryHM10.Models;
-using LibraryServises.Models;
+using LibraryServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibraryEntities;
 
-namespace LibraryServises;
+namespace LibraryServices;
 
 public interface ILibraryService
 {

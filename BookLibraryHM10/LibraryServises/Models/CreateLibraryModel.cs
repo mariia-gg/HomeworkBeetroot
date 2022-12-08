@@ -1,6 +1,6 @@
 ﻿using LibraryEntities;
 
-namespace LibraryServises.Models;
+namespace LibraryServices.Models;
 
 public class CreateLibraryModel
 {

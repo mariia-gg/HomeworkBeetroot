@@ -1,5 +1,9 @@
 ﻿using BookLibraryHM10.Models;
-using LibraryServises.Models;
+using LibraryServices.Models;
+using LibraryEntities;
+using LibraryServices.Validators;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace BookLibraryHM10;
 
@@ -26,6 +30,12 @@ public static class ConsoleHelper
             Genre = genre,
             PublicationYear = publicationYear
         };
+
+        Book book = new Book();
+
+        //CustomerValidator validator = new CustomerValidator();
+
+        //ValidationResult result = validator.Validate(customer);
     }
 
     public static CreateLibraryModel ReadLibrary()
@@ -37,6 +47,21 @@ public static class ConsoleHelper
         {
             Name = name
         };
+
+        Library createLibraryModel = new Library();
+
+        CreateLibraryModelValidator validator = new CreateLibraryModelValidator();
+
+        ValidationResult results = validator.Validate(createLibraryModel);
+
+        if (!results.IsValid)
+        {
+            foreach (var failure in results.Errors)
+            {
+                Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+            }
+        }
+
     }
 
     public static int GetLibraryId()
