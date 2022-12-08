@@ -33,9 +33,6 @@ public static class ConsoleHelper
 
         Book book = new Book();
 
-        //CustomerValidator validator = new CustomerValidator();
-
-        //ValidationResult result = validator.Validate(customer);
     }
 
     public static CreateLibraryModel ReadLibrary()

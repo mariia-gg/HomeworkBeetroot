@@ -1,5 +1,6 @@
 ﻿using LibraryServices;
-using LibraryServices;
+using LibraryServices.Validators;
+using FluentValidation.Results;
 
 namespace BookLibraryHM10;
 
@@ -9,11 +10,6 @@ internal class Application
 
     public Application(ILibraryService libraryService) =>
         _libraryService = libraryService;
-
-    public Application()
-    {
-      
-    }
 
     public void Run()
     {
@@ -78,5 +74,17 @@ internal class Application
         var createLibraryModel = ConsoleHelper.ReadLibrary();
 
         _libraryService.CreateLibrary(createLibraryModel);
+
+        CreateLibraryModelValidator validator = new CreateLibraryModelValidator();
+
+        ValidationResult results = validator.Validate(createLibraryModel);
+
+        if (!results.IsValid)
+        {
+            foreach (var failure in results.Errors)
+            {
+                Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+            }
+        }
     }
 }
