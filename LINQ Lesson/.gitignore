@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/BookLibrary
+/BookLibraryHM10
+/ExtensionMethods
+/GenericClasses
+/linq
+/Mystack
+/School-main
+/Snake
+/SnakeGame
+/Text
+/VoteApp
+/VoteApp1
+*.rar
+/HomeworkBeetroot
+*.zip
