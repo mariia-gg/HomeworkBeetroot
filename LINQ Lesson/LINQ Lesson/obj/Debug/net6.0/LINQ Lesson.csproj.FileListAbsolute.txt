@@ -1,0 +1,18 @@
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\LINQ Lesson.exe
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\LINQ Lesson.deps.json
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\LINQ Lesson.runtimeconfig.json
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\LINQ Lesson.dll
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\LINQ Lesson.pdb
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.csproj.AssemblyReference.cache
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.GeneratedMSBuildEditorConfig.editorconfig
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.AssemblyInfoInputs.cache
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.AssemblyInfo.cs
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.csproj.CoreCompileInputs.cache
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.csproj.CopyComplete
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.dll
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\refint\LINQ Lesson.dll
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.pdb
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\LINQ Lesson.genruntimeconfig.cache
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\obj\Debug\net6.0\ref\LINQ Lesson.dll
+C:\HomeworkBeetroot\LINQ Lesson\LINQ Lesson\bin\Debug\net6.0\data.json
