@@ -6,45 +6,75 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var persons = JsonConvert.DeserializeObject<IEnumerable<Person>>(File.ReadAllText("data.json")).ToList();
+        var persons = JsonConvert.DeserializeObject<IEnumerable<Person>>(File.ReadAllText("data.json"))?.ToList();
 
-        var male = persons.Count(p => p.Gender == Gender.Male);
-        var female = persons.Count(p => p.Gender == Gender.Female);
+        if (persons == null)
+        {
+            Console.WriteLine("No data found");
 
-        var maxFriends = persons.OrderByDescending(p => p.Friends.Length).First();
-        var maxFriends2 = persons.Select(p => p.Friends.Length).Max();
-        var maxFriends3 = persons.MaxBy(p => p.Friends.Length);
+            return;
+        }
 
-        //find out who is located farthest north / south / west / east using latitude/ longitude data
+        var maleCount = persons.Count(p => p.Gender == Gender.Male);
+        var femaleCount = persons.Count(p => p.Gender == Gender.Female);
+
+        var maxFriendsCount = persons.OrderByDescending(p => p.Friends.Length).First();
+        var maxFriendsCount2 = persons.Select(p => p.Friends.Length).Max();
+        var maxFriendsCount3 = persons.MaxBy(p => p.Friends.Length);
+
+        //find out who is located farthest north / south / west / east using latitude / longitude data
+
+        var personLocatedFarthestNorth = persons.MaxBy(p => p.Latitude);
+        var personLocatedFarthestSouth = persons.MinBy(p => p.Latitude);
+        var personLocatedFarthestWest = persons.MinBy(p => p.Longitude);
+        var personLocatedFarthestEast = persons.MaxBy(p => p.Longitude);
 
         //find max and min distance between 2 persons
+
         var distances = new List<double>();
 
-        persons.Aggregate(persons, (all, current) =>
-        {
-            distances.AddRange(all.Select(person =>
-                GetDistanceFromLatLonInKm(person.Latitude, person.Longitude, current.Latitude, current.Longitude)));
+        persons.ForEach(personX =>
+            distances.AddRange(persons.Select(personY =>
+                GetDistanceFromLatLonInKm(personY.Latitude, personY.Longitude, personX.Latitude, personX.Longitude))));
 
-            return persons;
-        });
-
-        var maxDistance = distances.Max(); 
+        var maxDistance = distances.Max();
         var minDistance = distances.Min();
 
         //find 2 persons whos ‘about’ have the most same words
-
-        var about = persons.GroupBy(p => p.About).Where(g => g.Count() > 1).Select(y => y.Key).ToList();
+        var personsWithMaxCommonWordsCount = persons
+            .SelectMany(personX => persons
+                .Select(personY => new
+                {
+                    Person1 = personX,
+                    Person2 = personY,
+                    CommonWordsCount = personX
+                        .About
+                        .Split(
+                            new[] { ' ', ',', '.', '!', '?', ':', ';', '(', ')', '"' },
+                            StringSplitOptions.RemoveEmptyEntries
+                        )
+                        .Intersect(personY.About.Split(
+                            new[] { ' ', ',', '.', '!', '?', ':', ';', '(', ')', '"' },
+                            StringSplitOptions.RemoveEmptyEntries
+                        ))
+                        .Count()
+                }))
+            .Where(x => x.Person1 != x.Person2)
+            .MaxBy(x => x.CommonWordsCount);
 
         //find persons with same friends(compare by friend’s name)
 
-        var theSameFriends = persons.GroupBy(p => p.Friends);
-
-        //var userList1 = new List<string>(); 
-        //var friends= persons.Where(p=> p.Friends)
-        //persons.ForEach();
+        var personsWithSameFriends = persons
+            .SelectMany(person => persons
+                .Where(p => p.Friends.IntersectBy(person.Friends.Select(x => x.Name), friend => friend.Name).Any())
+                .Select(p => new
+                {
+                    Person = person,
+                    Friend = p
+                }));
     }
 
-    public static double GetDistanceFromLatLonInKm(double lat1, double lon1, double lat2, double lon2)
+    private static double GetDistanceFromLatLonInKm(double lat1, double lon1, double lat2, double lon2)
     {
         var R = 6371; // Radius of the earth in km
         var dLat = Deg2rad(lat2 - lat1); // deg2rad below
@@ -60,5 +90,5 @@ internal class Program
         return d;
     }
 
-    public static double Deg2rad(double deg) => deg * (Math.PI / 180);
-} 
+    private static double Deg2rad(double deg) => deg * (Math.PI / 180);
+}
