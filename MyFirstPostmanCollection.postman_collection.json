@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "55212cbc-793a-4a9e-ac30-0e2e9457a8d6",
+		"name": "MyFirstPostmanCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25613047"
+	},
+	"item": [
+		{
+			"name": "My first GET request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jobs.postmanatwork.com/jobs",
+					"protocol": "https",
+					"host": [
+						"jobs",
+						"postmanatwork",
+						"com"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "San Francisco",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My first POST request (adding some data about me )",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Mary\", \r\n    \"Age\": 19, \r\n    \"Country\" : \"Ukraine\",\r\n    \"City\" : \"Skole\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My first PUT request Weather Forecast",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"day of week\": \"mon\",\r\n    \"weather\" : \"snow\", \r\n    \"cold\" :-1, \r\n    \"datetime\": \"30.01.2023\",\r\n    \"wind\": \"13km/h\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/put",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
